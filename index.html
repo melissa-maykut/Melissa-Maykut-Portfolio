@@ -466,20 +466,15 @@ section { position: relative; }
 .about {
   padding: 88px 0;
 }
-.about .wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  align-items: start;
-}
-@media (max-width: 860px) {
-  .about .wrap { grid-template-columns: 1fr; }
+.about-content {
+  width: 100%;
 }
 .about-lede {
   font-family: var(--font-display);
-  font-size: clamp(22px, 3vw, 28px);
+  font-size: clamp(22px, 2.4vw, 32px);
   color: var(--navy);
-  line-height: 1.4;
+  line-height: 1.5;
+  max-width: 62ch;
 }
 .tag-cloud {
   display: flex;
@@ -791,6 +786,13 @@ section { position: relative; }
   border: 1px solid var(--border);
 }
 .skill-copy h3 { font-size: 22px; margin-bottom: 10px; }
+.skill-list-ol {
+  margin: 0 0 14px;
+  padding-left: 1.3em;
+}
+.skill-list-ol li {
+  margin-bottom: 6px;
+}
 .skill-copy .skill-tag {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -811,6 +813,17 @@ section { position: relative; }
   color: var(--green-deep);
 }
 .guardrail-quote strong { display: block; margin-bottom: 4px; }
+.guardrail-quote p { margin: 0 0 8px; }
+.guardrail-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.guardrail-list li {
+  margin-bottom: 4px;
+}
+.guardrail-list li:last-child {
+  margin-bottom: 0;
+}
 
 /* -------------------- Volunteer -------------------- */
 .volunteer-section {
@@ -1031,10 +1044,10 @@ footer {
         <p class="hero-eyebrow">UX Research &amp; Accessibility</p>
         <h1>Melissa Maykut</h1>
         <p class="role">Senior User Experience Researcher · Certified Professional in Accessibility Core Competencies</p>
-        <p class="lede">My focus is qualitative research &mdash; especially with assistive technology
-          users, underserved communities, and the credit invisible &mdash; that produces insights
-          product and design teams can act on to make products accessible and usable for people of
-          all abilities.</p>
+        <p class="lede">My specialty and passion is qualitative research &mdash; particularly with
+          assistive technology users, underserved communities, and the credit invisible &mdash; that
+          produces actionable insights that product and design teams can use to make products
+          accessible and usable for people of all abilities.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="#" id="resume-btn" download="Melissa-Maykut-Resume.pdf">Download resume</a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/melissamaykut" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -1076,7 +1089,7 @@ footer {
   <!-- ============ ABOUT ============ -->
   <section class="about" id="about">
     <div class="wrap">
-      <div style="max-width: 700px;">
+      <div class="about-content">
         <p class="about-lede">I&#39;m currently a Senior User Experience Researcher at Experian where I run
           moderated and unmoderated studies, in-depth interviews, and an accessibility testing program.
           I then work with designers, engineers, and stakeholders to implement my research findings to
@@ -1092,8 +1105,7 @@ footer {
         <p class="eyebrow">Selected research</p>
         <h2>Case studies</h2>
         <p>Explore samples of my work! The below projects span accessibility testing, competitive
-          benchmarking, a longitudinal diary study, and design comparison research. Product names have
-          been generalized to protect confidential details.</p>
+          benchmarking, a longitudinal diary study, and design comparison research.</p>
       </div>
 
       <div class="case-list">
@@ -1338,7 +1350,7 @@ footer {
         </div>
 
         <div>
-          <h3 style="font-size:22px;">Founding the first Accessibility Council at the largest credit bureau in the U.S.</h3>
+          <h3 style="font-size:22px;">Founded the first Accessibility Council at the largest credit bureau in the U.S.</h3>
           <p style="color:var(--ink-soft);">An estimated <strong>70 million</strong> people live with
             some sort of disability. This community and their families control an estimated
             <strong>$13 trillion</strong> in disposable income. Making products accessible is a market
@@ -1388,10 +1400,12 @@ footer {
             <h3>Qualtrics &rarr; GreatQuestion panelist automation</h3>
             <p>My team recruits research participants through a panel that needs new panelist data
               reformatted for our research repository after every Qualtrics export &mdash;
-              previously a manual process I ran in Excel. I rebuilt it as a Codex skill that
-              automates the formatting and also flags panelists likely to be part of a disadvantaged
-              or underserved community, based on household income and zip code, so recruiting for
-              inclusive research is faster and more consistent.</p>
+              previously a manual process I ran in Excel. I rebuilt it as a Codex skill that:</p>
+            <ol class="skill-list-ol">
+              <li>Automates the formatting of the panelists for upload into our research repository, and</li>
+              <li>Flags panelists likely to be part of a disadvantaged or underserved community, based on household income and zip code.</li>
+            </ol>
+            <p>This has made updating our participant panel faster and recruiting for inclusive research easier.</p>
           </div>
         </div>
 
@@ -1410,11 +1424,14 @@ footer {
               creating well-cited reports and guiding stakeholders on accessibility.</p>
             <div class="guardrail-quote">
               <strong>Built-in guardrail: "AI executes, researchers decide."</strong>
-              Every output has to pass five rules I wrote into the skill: it applies documented
-              frameworks rather than inventing findings, a researcher owns the study and its
-              conclusions, a named researcher signs off before anything reaches a stakeholder,
-              anything the AI infers (rather than reads directly) ships labeled as a hypothesis,
-              and only data cleared for the tool's use ever goes in.
+              <p>Every output has to pass five rules I wrote into the skill:</p>
+              <ol class="guardrail-list">
+                <li>It applies documented frameworks rather than inventing findings.</li>
+                <li>A researcher owns the study and its conclusions.</li>
+                <li>A named researcher signs off before anything reaches a stakeholder.</li>
+                <li>Anything the AI infers (rather than reads directly) ships labeled as a hypothesis.</li>
+                <li>Only data cleared for the tool's use ever goes in.</li>
+              </ol>
             </div>
           </div>
         </div>
